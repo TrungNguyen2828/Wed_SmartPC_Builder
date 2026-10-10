@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPC Builder - Custom Build</title>
+    
+    <!-- FontAwesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+
+    <!-- 1. HEADER / NAVBAR -->
+    <header class="navbar">
+        <div class="logo">SmartPC Builder</div>
+        
+        <div class="nav-right">
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="pc-builder.html" class="active">Build PC</a></li>
+            </ul>
+            
+            <!-- Guest Menu (Visible when logged out) -->
+            <div id="guest-menu" class="guest-menu">
+                <div class="guest-avatar-container">
+                    <!-- Icon Avatar -->
+                    <i class="fa-regular fa-user guest-icon"></i>
+                    
+                    <!-- Text (Login/Register & Account) -->
+                    <div class="guest-text">
+                        <span class="guest-text-top">Login/Register</span>
+                        <span class="guest-text-bottom">Account <i class="fa-solid fa-caret-down"></i></span>
+                    </div>
+                    
+                    <!-- Guest Dropdown with Buttons -->
+                    <div class="guest-dropdown">
+                        <a href="login.html" class="btn-guest-dropdown btn-login-dropdown">Login</a>
+                        <a href="register.html" class="btn-guest-dropdown btn-register-dropdown">Create Account</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Menu (Avatar + User Name + Dropdown) -->
+            <div id="user-menu" class="user-menu" style="display: none;">
+                <div class="avatar-container">
+                    <img src="" alt="User Avatar" class="user-avatar" id="userAvatar">
+                    <span id="userNameDisplay" class="user-name-display"></span>
+                    
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu">
+                        <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                        <a href="#" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. MAIN BUILDER CONTENT -->
+    <main class="builder-main">
+        <h2 class="page-title">Custom PC Builder</h2>
+        <div class="builder-container">
+            <!-- Left Column: Component List -->
+            <div class="component-list">
+                <div class="component-row">
+                    <div class="component-name">CPU</div>
+                    <div class="component-selected" id="selected-cpu">Select a processor...</div>
+                    <button class="btn-choose" onclick="openComponentModal('CPU')">Choose</button>
+                </div>
+                <div class="component-row">
+                    <div class="component-name">Mainboard</div>
+                    <div class="component-selected" id="selected-mainboard">Select a motherboard...</div>
+                    <button class="btn-choose" onclick="openComponentModal('Mainboard')">Choose</button>
+                </div>
+                <div class="component-row">
+                    <div class="component-name">RAM</div>
+                    <div class="component-selected" id="selected-ram">Select memory...</div>
+                    <button class="btn-choose" onclick="openComponentModal('RAM')">Choose</button>
+                </div>
+                <div class="component-row">
+                    <div class="component-name">VGA (GPU)</div>
+                    <div class="component-selected" id="selected-vga">Select a graphics card...</div>
+                    <button class="btn-choose" onclick="openComponentModal('VGA')">Choose</button>
+                </div>
+                <div class="component-row">
+                    <div class="component-name">Power Supply</div>
+                    <div class="component-selected" id="selected-psu">Select a power supply...</div>
+                    <button class="btn-choose" onclick="openComponentModal('PSU')">Choose</button>
+                </div>
+            </div>
+
+            <!-- Right Column: Summary -->
+            <div class="summary-section">
+                <h3>Build Summary</h3>
+                <p>Estimated Wattage: <span style="font-weight: bold;">0W</span></p>
+                <div class="total-price">Total: $<span id="total-price">0</span></div>
+                <button class="btn-checkout" onclick="checkoutBuild()">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Hidden Modal for Fetching and Selecting Products -->
+    <div id="component-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Select Component</h2>
+            <!-- Products from MongoDB will be injected here -->
+            <div id="modal-product-list" class="modal-product-list"></div>
+        </div>
+    </div>
+
+    <!-- Script Link -->
+    <script src="js/pc-builder.js"></script>
+
+</body>
+</html>

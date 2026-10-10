@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SmartPC Builder</title>
+    
+    <!-- FontAwesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to the specific CSS for the login page -->
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+    <!-- Simple Header -->
+    <header class="simple-navbar">
+        <a href="home.html" class="logo">
+            <i class="fa-solid fa-desktop"></i> SmartPC Builder
+        </a>
+        <a href="home.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+    </header>
+
+    <!-- Authentication Form Area -->
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Welcome Back!</h2>
+            <p class="subtitle">Please login to your account to continue.</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-with-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                </div>
+                
+                <!-- Error message for invalid login -->
+                <p id="error-message" class="error-text"></p>
+
+                <!-- Additional form actions (Remember me & Forgot Password) -->
+                <div class="form-actions">
+                    <div class="remember-group">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn-primary btn-block">Log In</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="register.html">Sign up here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Link - FIXED: Removed '../' to correctly point to the js folder in the same directory -->
+    <script src="js/login.js"></script>
+</body>
+</html>

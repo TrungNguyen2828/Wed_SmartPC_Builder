@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPC Builder - Shopping Cart</title>
+    
+    <!-- FontAwesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+
+    <!-- 1. HEADER / NAVBAR -->
+    <header class="navbar">
+        <div class="logo">SmartPC Builder</div>
+        
+        <div class="nav-right">
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="pc-builder.html">Build PC</a></li>
+            </ul>
+            
+            <!-- Guest Menu (Visible when logged out) -->
+            <div id="guest-menu" class="guest-menu">
+                <div class="guest-avatar-container">
+                    <i class="fa-regular fa-user guest-icon"></i>
+                    <div class="guest-text">
+                        <span class="guest-text-top">Login/Register</span>
+                        <span class="guest-text-bottom">Account <i class="fa-solid fa-caret-down"></i></span>
+                    </div>
+                    <div class="guest-dropdown">
+                        <a href="login.html" class="btn-guest-dropdown btn-login-dropdown">Login</a>
+                        <a href="register.html" class="btn-guest-dropdown btn-register-dropdown">Create Account</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Menu (Visible when logged in) -->
+            <div id="user-menu" class="user-menu" style="display: none;">
+                <div class="avatar-container">
+                    <img src="" alt="User Avatar" class="user-avatar" id="userAvatar">
+                    <span id="userNameDisplay" class="user-name-display"></span>
+                    <div class="dropdown-menu">
+                        <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                        <a href="#" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. MAIN CART CONTENT -->
+    <main class="cart-main">
+        <h2 class="page-title">Your Shopping Cart</h2>
+        
+        <div class="cart-container">
+            <!-- Left Column: Cart Items -->
+            <div class="cart-items-section">
+                <div class="cart-items-header">
+                    <div class="header-product">Product Details</div>
+                    <div class="header-price">Price</div>
+                    <div class="header-qty">Quantity</div>
+                    <div class="header-action"></div>
+                </div>
+                
+                <!-- Items will be generated here by JavaScript -->
+                <div id="cart-items-container">
+                    <!-- Loading placeholder -->
+                    <p style="text-align: center; padding: 20px;">Checking your cart...</p>
+                </div>
+            </div>
+
+            <!-- Right Column: Order Summary -->
+            <div class="summary-section">
+                <h3>Order Summary</h3>
+                <div style="display: flex; justify-content: space-between; margin: 15px 0; color: #64748b;">
+                    <span>Subtotal:</span>
+                    <span style="font-weight: bold; color: #333;">$<span id="cart-subtotal">0</span></span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin: 15px 0; color: #64748b; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;">
+                    <span>Tax (10%):</span>
+                    <span style="font-weight: bold; color: #333;">$<span id="cart-tax">0</span></span>
+                </div>
+                
+                <div class="total-price" style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 1.2rem; color: #1e293b;">Total:</span>
+                    <span>$<span id="cart-total">0</span></span>
+                </div>
+                
+                <button class="btn-checkout" onclick="proceedToCheckout()" style="margin-top: 10px;">Proceed to Checkout</button>
+                <a href="home.html" style="display: block; text-align: center; margin-top: 15px; color: var(--primary-color); text-decoration: none; font-weight: 500;">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 3. FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>SmartPC Builder</h3>
+                <p>Your ultimate destination for building custom, high-performance PCs.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="pc-builder.html">Build PC</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SmartPC Builder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS script -->
+    <script src="js/cart.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+/* Import modern 'Inter' font from Google Fonts to match Home Page */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* General Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Apply the new font globally */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f3f4f6; /* Lighter, cleaner background */
+    color: #1f2937;
+    overflow: hidden; 
+}
+
+/* Dashboard Layout */
+.dashboard-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* --- SIDEBAR STYLES (Matching Home Page Dark Navy) --- */
+.sidebar {
+    width: 260px;
+    background-color: #0f172a; /* Matched with Home hero background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+.sidebar-header {
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid #1e293b;
+}
+
+.sidebar-header h2 {
+    color: #2563eb; /* Matched with Home Logo Blue */
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+.menu-item {
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #94a3b8;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.menu-item:hover {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+.menu-item.active {
+    background-color: #1e293b;
+    color: #ffffff; 
+    border-left: 4px solid #2563eb; /* Matched with Home Button Blue */
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid #1e293b;
+    text-align: center;
+}
+
+.sidebar-footer .back-link {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.sidebar-footer .back-link:hover {
+    color: #2563eb;
+}
+
+/* --- MAIN CONTENT STYLES --- */
+.main-content {
+    flex-grow: 1;
+    background-color: #f8fafc;
+    overflow-y: auto; 
+    padding: 40px;
+}
+
+/* Content Sections Visibility */
+.content-section {
+    display: none; 
+}
+
+.content-section.active-section {
+    display: block; 
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Container Wrappers */
+.admin-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.admin-container, .table-container {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 12px; /* Softer, modern border radius */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.admin-container h2, .table-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0f172a; /* Dark navy for headings */
+    font-weight: 700;
+    font-size: 22px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #334155;
+    font-size: 14px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.or-divider {
+    text-align: center;
+    margin: 10px 0;
+    color: #94a3b8;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #2563eb; /* Matched with Home Start Building Button */
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-submit:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-submit:active {
+    transform: scale(0.99);
+}
+
+/* Table Styles */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th, .product-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.product-table th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-table td {
+    font-size: 15px;
+    color: #1e293b;
+    vertical-align: middle;
+}
+
+.product-table td img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.price-cell {
+    color: #dc2626 !important;
+    font-weight: 700;
+}
+
+/* Table Buttons */
+.btn-edit, .btn-delete, .btn-action {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    color: white;
+    margin-right: 6px;
+    transition: background-color 0.2s;
+}
+
+.btn-edit { background-color: #f59e0b; }
+.btn-edit:hover { background-color: #d97706; }
+
+.btn-delete { background-color: #ef4444; }
+.btn-delete:hover { background-color: #dc2626; }
+
+.btn-action { background-color: #10b981; }
+.btn-action:hover { background-color: #059669; }
+
+.empty-message {
+    text-align: center;
+    color: #94a3b8;
+    padding: 30px;
+    font-style: italic;
+}

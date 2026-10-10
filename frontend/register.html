@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SmartPC Builder</title>
+    
+    <!-- FontAwesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Standard CSS Path: Step out one directory, then enter the css folder -->
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="simple-navbar">
+        <a href="home.html" class="logo">
+            <i class="fa-solid fa-desktop"></i> SmartPC Builder
+        </a>
+        <a href="home.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+    </header>
+
+    <!-- Main Authentication Container -->
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Create a New Account</h2>
+            <p class="subtitle">Join the SmartPC Builder community today!</p>
+            
+            <form id="registerForm">
+                <!-- Full Name -->
+                <div class="input-group">
+                    <label for="fullname">Full Name</label>
+                    <div class="input-with-icon">
+                        <i class="fa-regular fa-user icon-left"></i>
+                        <input type="text" id="fullname" placeholder="Enter your full name" required>
+                    </div>
+                </div>
+
+                <!-- Email Address -->
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-with-icon">
+                        <i class="fa-regular fa-envelope icon-left"></i>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-phone icon-left"></i>
+                        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="input-group">
+                    <label for="address">Address</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-location-dot icon-left"></i>
+                        <input type="text" id="address" placeholder="Enter your home address" required>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-lock icon-left"></i>
+                        <input type="password" id="password" class="password-input" placeholder="Create a password" required minlength="6">
+                        <!-- Eye Icon for Password -->
+                        <i class="fa-solid fa-eye toggle-eye" id="togglePassword"></i>
+                    </div>
+                </div>
+                
+                <!-- Confirm Password -->
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-shield icon-left"></i>
+                        <input type="password" id="confirmPassword" class="password-input" placeholder="Confirm your password" required minlength="6">
+                        <!-- Eye Icon for Confirm Password -->
+                        <i class="fa-solid fa-eye toggle-eye" id="toggleConfirmPassword"></i>
+                    </div>
+                </div>
+
+                <!-- Error Message Display -->
+                <p id="error-message" class="error-text"></p>
+
+                <!-- Terms and Conditions -->
+                <div class="form-actions">
+                    <div class="terms-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-primary btn-block">Sign Up</button>
+            </form>
+
+            <!-- Footer Links -->
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Log in here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Standard JS Path: Enter the js folder directly -->
+    <script src="js/register.js"></script>
+</body>
+</html>
